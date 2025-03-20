@@ -24,6 +24,10 @@ img {
   max-width: 100%;
 }
 
+/* svg {
+  display: block;
+} */
+
 button {
   border: none;
   background-color: transparent;

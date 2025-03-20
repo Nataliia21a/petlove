@@ -1,10 +1,22 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  max-width: 767px;
+  /* display: flex;
+  flex-direction: column; */
+  /* gap: 5px; */
   min-width: 320px;
+  max-width: 375px;
   margin: 0 auto;
   padding: 0 15px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
 }

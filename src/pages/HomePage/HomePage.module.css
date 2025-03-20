@@ -1,9 +1,22 @@
-.container {
-  background-image: image-set(
-    url("/public/img/home-page-mob-2x.png") 2x,
-    url("/public/img/home-page-mob-1x.png") 1x
-  );
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
+.containerHomePage {
+  background: url("/img/home-page-mob-1x.png");
+  padding-top: 381px;
+  padding-bottom: 381px;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    background-image: url("/img/mane-page-tablet-1x.jpg");
+    padding-top: 462px;
+    padding-bottom: 462px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    background-image: url("/img/mane-page-desk.jpg");
+    padding-top: 350px;
+    padding-bottom: 350px;
+  }
 }
