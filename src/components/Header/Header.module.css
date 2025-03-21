@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: block;
+}
+
+.containerSvg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff4df;
+  position: relative;
+}
+
+.user {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
