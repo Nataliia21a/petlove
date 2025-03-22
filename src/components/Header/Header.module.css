@@ -1,10 +1,17 @@
 .header {
   display: flex;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .logo {
   display: block;
+  margin-right: 135px;
+}
+
+.userMenu {
+  display: flex;
+  gap: 4px;
 }
 
 .containerSvg {
@@ -15,7 +22,7 @@
   position: relative;
 }
 
-.user {
+.userSvg {
   display: block;
   position: absolute;
   top: 50%;
