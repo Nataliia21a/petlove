@@ -7,7 +7,9 @@ export default function MainLayout() {
       <div className={css.orangeContainer}>
         <Header />
         <div className={css.textContainer}>
-          <h1 className={css.title}>Take good care of your small pets</h1>
+          <h1 className={css.title}>
+            Take good <span className={css.span}>care</span> of your small pets
+          </h1>
           <p className={css.description}>
             Choosing a pet for your home is a choice that is meant to enrich
             your life with immeasurable joy and tenderness.

@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+.headerBlack {
+  background-color: blue;
+}
+
+.headerBlack .logo {
+  color: black;
+}
+
 .logo {
   display: block;
   margin-right: 135px;
