@@ -2,10 +2,11 @@ import css from "../MainLayout/MainLayout.module.css";
 import Header from "../../components/Header/Header";
 
 export default function MainLayout() {
+  const isActive = true;
   return (
     <div className={css.mainLayoutContainer}>
       <div className={css.orangeContainer}>
-        <Header />
+        <Header isActive={isActive} />
         <div className={css.textContainer}>
           <h1 className={css.title}>
             Take good <span className={css.span}>care</span> of your small pets
