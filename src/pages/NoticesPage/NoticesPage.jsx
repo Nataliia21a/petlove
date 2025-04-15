@@ -1,7 +1,11 @@
+import Header from "../../components/Header/Header";
+import Title from "../../components/Title/Title";
+
 export default function NoticesPage() {
   return (
     <div>
-      <p>NoticesPage</p>
+      <Header />
+      <Title>Find your favorite pet</Title>
     </div>
   );
 }
