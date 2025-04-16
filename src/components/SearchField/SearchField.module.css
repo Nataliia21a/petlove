@@ -1,0 +1,27 @@
+.searchInput {
+  width: 335px;
+  height: 42px;
+}
+
+.input {
+  border: 1px solid rgba(38, 38, 38, 0.15);
+  border-radius: 30px;
+  padding: 12px;
+  width: 100%;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
+.input::placeholder {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: rgba(38, 38, 38, 0.5);
+}
