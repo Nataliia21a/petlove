@@ -16,6 +16,8 @@ export default function SearchField({ isNewsPageActive }) {
   };
 
   const handleSearch = () => {
+    console.log("inputValue", inputValue);
+
     dispatch(fetchNews(inputValue));
   };
 
