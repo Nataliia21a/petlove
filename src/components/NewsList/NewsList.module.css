@@ -1,0 +1,7 @@
+.newsList {
+  margin-top: 24px;
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
