@@ -1,0 +1,58 @@
+.containerPagination {
+  display: flex;
+  justify-content: space-between;
+}
+
+.circle,
+.circlePoints {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(38, 38, 38, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrovNotActive,
+.arrovNotActiveDoble {
+  fill: rgba(38, 38, 38, 0.5);
+}
+
+.arrovNotActiveDoble,
+.arrovDoble {
+  margin: -6px;
+  padding: 0;
+  display: block; /* гарантує, що немає зайвого inline-простору */
+}
+
+.circlePoints {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.points {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #262626;
+}
+
+.pageNumber {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #262626;
+}
+
+.circleActive {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(38, 38, 38, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
