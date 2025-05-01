@@ -11,10 +11,14 @@ export default function NewsItem({ newsItem }) {
   return (
     <div className={css.containerNewsItem}>
       <img className={css.img} src={newsItem.imgUrl} alt={newsItem.title} />
-      <h2>{newsItem.title}</h2>
-      <p>{newsItem.text}</p>
-      <p>{fullDate}</p>
-      <a href={newsItem.url}>Read more</a>
+      <h2 className={css.title}>{newsItem.title}</h2>
+      <p className={css.description}>{newsItem.text}</p>
+      <div className={css.dateBlock}>
+        <p className={css.date}>{fullDate}</p>
+        <a className={css.link} href={newsItem.url}>
+          Read more
+        </a>
+      </div>
     </div>
   );
 }

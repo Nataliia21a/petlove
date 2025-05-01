@@ -4,6 +4,53 @@
 
 .img {
   width: 335px;
+  height: 190px;
   border-radius: 15px;
   margin-bottom: 20px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: #262626;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #262626;
+  margin-bottom: 19px;
+}
+
+.dateBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.link {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #f6b83d;
+  text-decoration: none;
 }

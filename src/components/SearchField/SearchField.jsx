@@ -7,7 +7,7 @@ import { fetchNews } from "../../redux/operations";
 export default function SearchField({ isNewsPageActive }) {
   const dispatch = useDispatch();
 
-  const inputNewsPage = clsx(
+  const inputSearch = clsx(
     isNewsPageActive ? css.inputSearchNews : css.searchInput
   );
   const [inputValue, setInputValue] = useState("");
@@ -26,7 +26,7 @@ export default function SearchField({ isNewsPageActive }) {
   };
 
   return (
-    <div className={inputNewsPage}>
+    <div className={inputSearch}>
       <button className={css.btnSearch} onClick={handleSearch}>
         <svg className={css.iconSearch} width="18" height="18">
           <use href="/svg/symbol-defs.svg#icon-search"></use>
