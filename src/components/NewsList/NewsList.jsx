@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import NewsItem from "../NewItem/NewItem";
 import { useEffect } from "react";
-import { fetchNews } from "../../redux/operations";
+import { fetchNews } from "../../redux/news/operations";
 import css from "./NewsList.module.css";
 
 export default function NewsList() {
@@ -9,7 +9,7 @@ export default function NewsList() {
   useEffect(() => {
     dispatch(fetchNews());
   }, [dispatch]);
-  const newsList = useSelector((state) => state.pets.items.results) || [];
+  const newsList = useSelector((state) => state.news.items.results) || [];
 
   return (
     <ul className={css.newsList}>

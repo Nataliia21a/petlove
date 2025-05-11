@@ -5,10 +5,13 @@ axios.defaults.baseURL = "https://petlove.b.goit.study/api";
 
 export const fetchNews = createAsyncThunk(
   "news/fetchNews",
-  async (keyWord = "", thunkAPI) => {
+  async ({ keyWord = "", page, limit }, thunkAPI) => {
+    // console.log(page, limit);
     try {
       const response = await axios.get(
-        keyWord ? `/news?keyword=${keyWord}` : `/news`
+        keyWord
+          ? `/news?keyword=${keyWord}&page=${page}&limit=${limit}`
+          : `/news`
       );
       console.log("response", response.data);
       return response.data;

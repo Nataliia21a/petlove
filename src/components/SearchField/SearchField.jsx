@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import css from "./SearchField.module.css";
 import { useDispatch } from "react-redux";
-import { fetchNews } from "../../redux/operations";
+import { fetchNews } from "../../redux/news/operations";
 
 export default function SearchField({ isNewsPageActive }) {
   const dispatch = useDispatch();
-
+  const page = 1;
+  const limit = 2;
   const inputSearch = clsx(
     isNewsPageActive ? css.inputSearchNews : css.searchInput
   );
@@ -18,8 +19,12 @@ export default function SearchField({ isNewsPageActive }) {
   const handleSearch = () => {
     console.log("inputValue", inputValue);
 
-    dispatch(fetchNews(inputValue));
+    dispatch(fetchNews({ keyWord: inputValue, page, limit }));
   };
+
+  useEffect(() => {
+    dispatch(fetchNews({ page, limit }));
+  }, [dispatch]);
 
   const handleClick = () => {
     setInputValue("");

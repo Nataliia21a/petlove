@@ -23,7 +23,7 @@
 .arrovDoble {
   margin: -6px;
   padding: 0;
-  display: block; /* гарантує, що немає зайвого inline-простору */
+  display: block;
 }
 
 .circlePoints {
