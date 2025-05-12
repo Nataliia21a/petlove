@@ -1,38 +1,20 @@
-import { useEffect, useState } from "react";
 import clsx from "clsx";
 import css from "./SearchField.module.css";
-import { useDispatch } from "react-redux";
-import { fetchNews } from "../../redux/news/operations";
 
-export default function SearchField({ isNewsPageActive }) {
-  const dispatch = useDispatch();
-  const page = 1;
-  const limit = 2;
+export default function SearchField({
+  isNewsPageActive,
+  onChange,
+  onSearch,
+  handleClick,
+  value,
+}) {
   const inputSearch = clsx(
     isNewsPageActive ? css.inputSearchNews : css.searchInput
   );
-  const [inputValue, setInputValue] = useState("");
-  const handleChange = (evt) => {
-    setInputValue(evt.target.value);
-  };
-
-  const handleSearch = () => {
-    console.log("inputValue", inputValue);
-
-    dispatch(fetchNews({ keyWord: inputValue, page, limit }));
-  };
-
-  useEffect(() => {
-    dispatch(fetchNews({ page, limit }));
-  }, [dispatch]);
-
-  const handleClick = () => {
-    setInputValue("");
-  };
 
   return (
     <div className={inputSearch}>
-      <button className={css.btnSearch} onClick={handleSearch}>
+      <button className={css.btnSearch} onClick={onSearch}>
         <svg className={css.iconSearch} width="18" height="18">
           <use href="/svg/symbol-defs.svg#icon-search"></use>
         </svg>
@@ -40,11 +22,11 @@ export default function SearchField({ isNewsPageActive }) {
       <input
         className={css.input}
         type="text"
-        value={inputValue}
-        onChange={handleChange}
+        value={value}
+        onChange={(evt) => onChange(evt.target.value)}
         placeholder="Search"
       />
-      {inputValue && (
+      {value && (
         <button className={css.buttonX} onClick={handleClick}>
           <svg className={css.iconX} width="18" height="18">
             <use href="/svg/symbol-defs.svg#icon-x-black-mob"></use>

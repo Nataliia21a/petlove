@@ -6,10 +6,19 @@ const slice = createSlice({
   initialState: {
     items: [],
     activePage: 1,
+    searchQuery: "",
     perPage: 6,
     totalPages: 1,
     loading: false,
     error: false,
+  },
+  reducers: {
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+    setActivePage: (state, action) => {
+      state.activePage = action.payload;
+    },
   },
   extraReducers: (builder) =>
     builder
@@ -31,4 +40,5 @@ const slice = createSlice({
       }),
 });
 
+export const { setSearchQuery, setActivePage } = slice.actions;
 export default slice.reducer;

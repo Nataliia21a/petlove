@@ -5,10 +5,6 @@ import { fetchNews } from "../../redux/news/operations";
 import css from "./NewsList.module.css";
 
 export default function NewsList() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchNews());
-  }, [dispatch]);
   const newsList = useSelector((state) => state.news.items.results) || [];
 
   return (

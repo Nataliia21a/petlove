@@ -27,7 +27,7 @@ export const store = configureStore({
   reducer: {
     // auth: persistedAuthReducer,
     // contacts: contactsReducer,
-    pets: newsReducer,
+    news: newsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
