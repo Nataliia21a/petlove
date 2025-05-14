@@ -11,20 +11,24 @@ import Pagination from "../../components/Pagination/Pagination";
 import { setActivePage, setSearchQuery } from "../../redux/news/slice";
 
 export default function NewsPage() {
-  const isActive = true;
-  const page = 1;
-  const limit = 2;
-
-  const searchQuery = useSelector((state) => state.news.searchQuery);
-
   const dispatch = useDispatch();
 
+  const isActive = true;
+
+  const { searchQuery, activePage, totalPages, perPage } = useSelector(
+    (state) => state.news
+  );
+
   useEffect(() => {
-    dispatch(fetchNews({ keyWord: searchQuery, page, limit }));
-  }, [dispatch, searchQuery, page, limit]);
+    dispatch(
+      fetchNews({ keyWord: searchQuery, page: activePage, limit: perPage })
+    );
+  }, [dispatch, searchQuery, activePage, perPage]);
 
   const handleSearch = () => {
-    dispatch(fetchNews({ keyWord: searchQuery, page, limit }));
+    dispatch(
+      fetchNews({ keyWord: searchQuery, page: activePage, limit: perPage })
+    );
   };
 
   const handleChange = (value) => {
@@ -44,11 +48,13 @@ export default function NewsPage() {
         isNewsPageActive={isActive}
         onChange={handleChange}
         onSearch={handleSearch}
-        handleClick={handleClear}
+        handleClear={handleClear}
         value={searchQuery}
       />
       <NewsList />
-      <Pagination />
+      {totalPages > 1 && (
+        <Pagination totalPages={totalPages} activePage={activePage} />
+      )}
     </div>
   );
 }

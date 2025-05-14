@@ -5,7 +5,7 @@ export default function SearchField({
   isNewsPageActive,
   onChange,
   onSearch,
-  handleClick,
+  handleClear,
   value,
 }) {
   const inputSearch = clsx(
@@ -27,7 +27,7 @@ export default function SearchField({
         placeholder="Search"
       />
       {value && (
-        <button className={css.buttonX} onClick={handleClick}>
+        <button className={css.buttonX} onClick={handleClear}>
           <svg className={css.iconX} width="18" height="18">
             <use href="/svg/symbol-defs.svg#icon-x-black-mob"></use>
           </svg>

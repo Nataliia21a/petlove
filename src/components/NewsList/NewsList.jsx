@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import NewsItem from "../NewItem/NewItem";
-import { useEffect } from "react";
-import { fetchNews } from "../../redux/news/operations";
+
 import css from "./NewsList.module.css";
 
 export default function NewsList() {
