@@ -1,55 +1,75 @@
-import { useDispatch } from "react-redux";
+import clsx from "clsx";
 import css from "./Pagination.module.css";
-import { setActivePage } from "../../redux/news/slice";
 
-export default function Pagination({ activePage, totalPages }) {
-  const dispatch = useDispatch();
-
+export default function Pagination({
+  activePage,
+  totalPages,
+  handleSetFirstPage,
+  handlePreviousPage,
+  handleSelectionPage,
+  handleSetNextPage,
+  handleSetLastPage,
+}) {
   const pageToShow = [];
   for (let i = activePage; i <= totalPages && i <= activePage + 1; i++) {
     pageToShow.push(i);
   }
+
+  const backArrovDoble = clsx(
+    activePage > 1 ? css.arrovDoble : css.arrovNotActiveDoble
+  );
+
+  const backArrovOnce = clsx(activePage <= 1 && css.arrovNotActive);
+
+  const arrovToEndDoble = clsx(
+    activePage === totalPages ? css.arrovNotActiveDoble : css.arrovDoble
+  );
+
+  const arrovToNext = clsx(activePage === totalPages && css.arrovNotActive);
+
+  const activeCircleBack = clsx(
+    activePage > 1 ? css.circleActive : css.circleArrov
+  );
+
+  const activeCircleToEnd = clsx(
+    activePage === totalPages ? css.circleArrov : css.circleActive
+  );
+
+  const activePageStyle = clsx(activePage ? css.activePage : css.circle);
+
   return (
     <div className={css.containerPagination}>
       <button
         type="button"
-        className={css.circle}
-        onClick={() => {
-          dispatch(setActivePage(1));
-        }}
+        className={activeCircleBack}
+        onClick={handleSetFirstPage}
       >
-        <svg className={css.arrovNotActiveDoble} width={20} height={20}>
+        <svg className={backArrovDoble} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-left-grey-mob"></use>
         </svg>
-        <svg className={css.arrovNotActiveDoble} width={20} height={20}>
+        <svg className={backArrovDoble} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-left-grey-mob"></use>
         </svg>
       </button>
       <button
         type="button"
-        className={css.circle}
-        onClick={() => {
-          if (activePage > 1) {
-            dispatch(setActivePage(activePage - 1));
-          }
-        }}
+        className={activeCircleBack}
+        onClick={handlePreviousPage}
       >
-        <svg className={css.arrovNotActive} width={20} height={20}>
+        <svg className={backArrovOnce} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-left-grey-mob"></use>
         </svg>
       </button>
-      <ul>
+      <ul className={css.pageButtons}>
         {pageToShow.map((page) => {
           return (
             <li key={page}>
               <button
-                onClick={() => {
-                  dispatch(setActivePage(page));
-                }}
+                onClick={() => handleSelectionPage(page)}
                 type="button"
-                className={css.circle}
+                className={activePageStyle}
               >
-                <p className={css.pageNumber}>{page}</p>
+                {page}
               </button>
             </li>
           );
@@ -62,26 +82,22 @@ export default function Pagination({ activePage, totalPages }) {
       )}
       <button
         type="button"
-        className={css.circleActive}
-        onClick={() => {
-          dispatch(setActivePage(activePage + 1));
-        }}
+        className={activeCircleToEnd}
+        onClick={handleSetNextPage}
       >
-        <svg width={20} height={20}>
+        <svg className={arrovToNext} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-reight-black-mob"></use>
         </svg>
       </button>
       <button
         type="button"
-        className={css.circleActive}
-        onClick={() => {
-          dispatch(setActivePage(totalPages));
-        }}
+        className={activeCircleToEnd}
+        onClick={handleSetLastPage}
       >
-        <svg className={css.arrovDoble} width={20} height={20}>
+        <svg className={arrovToEndDoble} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-reight-black-mob"></use>
         </svg>
-        <svg className={css.arrovDoble} width={20} height={20}>
+        <svg className={arrovToEndDoble} width={20} height={20}>
           <use href="/svg/symbol-defs.svg#icon-angle-small-reight-black-mob"></use>
         </svg>
       </button>

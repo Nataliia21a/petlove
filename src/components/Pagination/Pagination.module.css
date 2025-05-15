@@ -3,8 +3,10 @@
   justify-content: space-between;
 }
 
+.circleArrov,
 .circle,
-.circlePoints {
+.circlePoints,
+.activePage {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -12,34 +14,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.arrovNotActive,
-.arrovNotActiveDoble {
-  fill: rgba(38, 38, 38, 0.5);
-}
-
-.arrovNotActiveDoble,
-.arrovDoble {
-  margin: -6px;
-  padding: 0;
-  display: block;
-}
-
-.circlePoints {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.points {
-  font-family: "Manrope", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #262626;
-}
-
-.pageNumber {
   font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 14px;
@@ -55,4 +29,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.circleArrov {
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.activePage {
+  color: #fff;
+  background: #f6b83d;
+}
+
+.arrovNotActive,
+.arrovNotActiveDoble {
+  fill: rgba(38, 38, 38, 0.5);
+}
+
+.arrovNotActiveDoble,
+.arrovDoble {
+  margin: -6px;
+  padding: 0;
+  display: block;
+}
+
+.points {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #262626;
+}
+
+.pageButtons {
+  display: flex;
+  gap: 10px;
 }

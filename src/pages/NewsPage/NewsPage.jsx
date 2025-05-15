@@ -40,6 +40,28 @@ export default function NewsPage() {
     dispatch(setSearchQuery(""));
   };
 
+  const handleSetFirstPage = () => {
+    dispatch(setActivePage(1));
+  };
+
+  const handlePreviousPage = () => {
+    if (activePage > 1) {
+      dispatch(setActivePage(activePage - 1));
+    }
+  };
+
+  const handleSelectionPage = (page) => {
+    dispatch(setActivePage(page));
+  };
+
+  const handleSetNextPage = () => {
+    dispatch(setActivePage(activePage + 1));
+  };
+
+  const handleSetLastPage = () => {
+    dispatch(setActivePage(totalPages));
+  };
+
   return (
     <div className={css.container}>
       <Header />
@@ -53,7 +75,15 @@ export default function NewsPage() {
       />
       <NewsList />
       {totalPages > 1 && (
-        <Pagination totalPages={totalPages} activePage={activePage} />
+        <Pagination
+          totalPages={totalPages}
+          activePage={activePage}
+          handleSetFirstPage={handleSetFirstPage}
+          handlePreviousPage={handlePreviousPage}
+          handleSelectionPage={handleSelectionPage}
+          handleSetNextPage={handleSetNextPage}
+          handleSetLastPage={handleSetLastPage}
+        />
       )}
     </div>
   );
