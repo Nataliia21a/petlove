@@ -35,8 +35,6 @@ export default function Pagination({
     activePage === totalPages ? css.circleArrov : css.circleActive
   );
 
-  const activePageStyle = clsx(activePage ? css.activePage : css.circle);
-
   return (
     <div className={css.containerPagination}>
       <button
@@ -67,7 +65,7 @@ export default function Pagination({
               <button
                 onClick={() => handleSelectionPage(page)}
                 type="button"
-                className={activePageStyle}
+                className={page === activePage ? css.activePage : css.circle}
               >
                 {page}
               </button>
