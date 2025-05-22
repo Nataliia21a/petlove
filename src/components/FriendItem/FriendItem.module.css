@@ -1,0 +1,10 @@
+.containerFriends {
+  min-width: 100%;
+  display: flex;
+  gap: 14px;
+}
+
+.img {
+  width: 80px;
+  height: 80px;
+}

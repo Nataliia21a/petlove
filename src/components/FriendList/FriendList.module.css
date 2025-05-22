@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.friendItemContainer {
+  width: 335px;
+  height: 184px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px 20px 40px 20px;
+  box-sizing: border-box;
+}
