@@ -1,7 +1,55 @@
 .containerFriends {
   min-width: 100%;
   display: flex;
+  flex-direction: column;
+}
+
+.workTime {
+  align-self: flex-end;
+  border-radius: 30px;
+  padding: 8px;
+  background: #fff4df;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: #f6b83d;
+}
+
+.friendDescription {
+  display: flex;
   gap: 14px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: #262626;
+  margin-bottom: 14px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.contacts p a {
+  color: inherit;
+}
+
+.contacts p span {
+  color: #262626;
 }
 
 .img {
