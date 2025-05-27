@@ -1,17 +1,73 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getNotices } from "./operations";
+import {
+  getCategories,
+  getNotices,
+  getNoticesSex,
+  getPetSpecies,
+} from "./operations";
 
 const slice = createSlice({
   name: "notices",
   initialState: {
+    items: [],
+    categories: [],
+    sex: [],
+    species: [],
+    page: 1,
+    perPage: 6,
+    totalPages: 1,
     loading: false,
     error: false,
   },
+  reducers: {},
   extraReducers: (builder) =>
-    builder.addCase(getNotices.pending, (state) => {
-      state.loading = true;
-      state.error = false;
-    }),
+    builder
+      .addCase(getNotices.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getNotices.fulfilled, (state, action) => {
+        state.items = action.payload.results;
+        state.loading = false;
+        state.error = false;
+      })
+      .addCase(getNotices.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getCategories.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
+      })
+      .addCase(getCategories.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getNoticesSex.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getNoticesSex.fulfilled, (state, action) => {
+        state.sex = action.payload;
+      })
+      .addCase(getNoticesSex.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getPetSpecies.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getPetSpecies.fulfilled, (state, action) => {
+        state.species = action.payload;
+      })
+      .addCase(getPetSpecies.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      }),
 });
 
 export default slice.reducer;
