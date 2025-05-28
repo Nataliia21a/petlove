@@ -47,18 +47,33 @@ export default function NoticesFilters() {
 
   console.log(selectedOption && selectedOption.value);
 
-  // const petsList = useSelector((state) => state.notices.items);
+  const customStyles = {
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      appearance: "none",
+      border: "none",
+      borderRadius: "30px",
+      padding: "12px 228px 12px 12px",
+      width: "295px",
+      height: "42px",
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color: "blue",
+      border: "none",
+    }),
+  };
 
   return (
-    <div>
-      <p>NoticesFilters</p>
+    <div className={css.container}>
       <SearchField />
-      <div>
+      <div className={css.categoryAndGender}>
         <select
+          className={css.category}
           value={sellCategory}
           onChange={(evt) => setSellCategory(evt.target.value)}
         >
-          <option value="" disabled hidden>
+          <option className={css.option} value="" disabled hidden>
             Category
           </option>
           {categories.map((category) => {
@@ -69,7 +84,11 @@ export default function NoticesFilters() {
             );
           })}
         </select>
-        <select value={sex} onChange={(evt) => setSex(evt.target.value)}>
+        <select
+          className={css.gender}
+          value={sex}
+          onChange={(evt) => setSex(evt.target.value)}
+        >
           <option value="" disabled hidden>
             By gender
           </option>
@@ -82,7 +101,11 @@ export default function NoticesFilters() {
           })}
         </select>
       </div>
-      <select value={type} onChange={(evt) => setType(evt.target.value)}>
+      <select
+        className={css.byType}
+        value={type}
+        onChange={(evt) => setType(evt.target.value)}
+      >
         <option value="" disabled hidden>
           By type
         </option>
@@ -100,6 +123,7 @@ export default function NoticesFilters() {
           onChange={setSelectedOption}
           options={cityList}
           placeholder="Location"
+          styles={customStyles}
         />
       </div>
       <div>
