@@ -52,3 +52,15 @@ export const getPetSpecies = createAsyncThunk(
     }
   }
 );
+
+export const getLocations = createAsyncThunk(
+  "notices/getLocations",
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get("/cities/locations");
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

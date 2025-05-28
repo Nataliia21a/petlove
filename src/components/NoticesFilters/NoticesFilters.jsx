@@ -5,15 +5,10 @@ import css from "./NoticesFilters.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getCategories,
+  getLocations,
   getNoticesSex,
   getPetSpecies,
 } from "../../redux/notices/operations";
-
-const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
-];
 
 export default function NoticesFilters() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -28,6 +23,7 @@ export default function NoticesFilters() {
     dispatch(getCategories());
     dispatch(getNoticesSex());
     dispatch(getPetSpecies());
+    dispatch(getLocations());
   }, []);
 
   const categories = useSelector((state) => state.notices.categories);
@@ -36,11 +32,20 @@ export default function NoticesFilters() {
 
   const petSpecies = useSelector((state) => state.notices.species);
 
+  const locations = useSelector((state) => state.notices.locations);
+
+  const cityList = locations.map((city) => ({
+    value: city.cityEn,
+    label: city.cityEn,
+  }));
+
   const handleSortChange = (evt) => {
     console.log(evt.target.value);
 
     setSort(evt.target.value);
   };
+
+  console.log(selectedOption && selectedOption.value);
 
   // const petsList = useSelector((state) => state.notices.items);
 
@@ -93,7 +98,7 @@ export default function NoticesFilters() {
         <Select
           defaultValue={selectedOption}
           onChange={setSelectedOption}
-          options={options}
+          options={cityList}
           placeholder="Location"
         />
       </div>

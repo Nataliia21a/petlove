@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   getCategories,
+  getLocations,
   getNotices,
   getNoticesSex,
   getPetSpecies,
@@ -13,6 +14,7 @@ const slice = createSlice({
     categories: [],
     sex: [],
     species: [],
+    locations: [],
     page: 1,
     perPage: 6,
     totalPages: 1,
@@ -65,6 +67,17 @@ const slice = createSlice({
         state.species = action.payload;
       })
       .addCase(getPetSpecies.rejected, (state) => {
+        state.loading = false;
+        state.error = true;
+      })
+      .addCase(getLocations.pending, (state) => {
+        state.loading = true;
+        state.error = false;
+      })
+      .addCase(getLocations.fulfilled, (state, action) => {
+        state.locations = action.payload;
+      })
+      .addCase(getLocations.rejected, (state) => {
         state.loading = false;
         state.error = true;
       }),
