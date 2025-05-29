@@ -11,6 +11,9 @@
   gap: 12px;
 }
 
+.search {
+}
+
 .categoryAndGender {
   display: flex;
   gap: 8px;
@@ -21,7 +24,7 @@
 .gender,
 .byType {
   border-radius: 30px;
-  padding: 12px 72px 12px 12px;
+  padding: 12px 12px 12px 12px;
   width: 143px;
   height: 42px;
   background: #fff;
@@ -40,9 +43,41 @@
   width: 100%;
 }
 
-.category::placeholder {
-  color: red;
+.option {
 }
 
-.option {
+.containerRadioBtn {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.radioBtn {
+  border-radius: 30px;
+  padding: 12px;
+  height: 42px;
+  background: #fff;
+  cursor: default;
+  appearance: inherit;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+}
+
+.radioInput {
+}
+
+.line {
+  width: 100%;
+  border: 1px solid rgba(38, 38, 38, 0.1);
+  margin-top: 8px;
+  margin-bottom: 8px;
 }

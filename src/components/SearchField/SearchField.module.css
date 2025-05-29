@@ -8,6 +8,16 @@
   width: 100%;
 }
 
+.inputSearchNotices {
+  width: 295px;
+  height: 42px;
+  background: #fff;
+  border-radius: 30px;
+  box-sizing: border-box;
+  position: relative;
+  padding: 12px;
+}
+
 .inputSearchNews {
   margin-top: 20px;
   width: 335px;
@@ -52,6 +62,16 @@
   box-sizing: border-box;
 }
 
+.inputNotices {
+  border: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #262626;
+}
+
 .input::placeholder {
   font-family: "Manrope", sans-serif;
   font-weight: 500;
@@ -59,4 +79,8 @@
   line-height: 1.28571;
   letter-spacing: -0.03em;
   color: rgba(38, 38, 38, 0.5);
+}
+
+.inputNotices::placeholder {
+  color: #262626;
 }

@@ -17,6 +17,8 @@ export default function NoticesFilters() {
   const [type, setType] = useState("");
   const [sorted, setSort] = useState("");
 
+  const isNoticesActive = true;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -53,20 +55,34 @@ export default function NoticesFilters() {
       appearance: "none",
       border: "none",
       borderRadius: "30px",
-      padding: "12px 228px 12px 12px",
+      padding: "12px 12px 12px 12px",
       width: "295px",
       height: "42px",
+      overflow: "visible",
+      textAling: "left",
     }),
-    placeholder: (provided) => ({
-      ...provided,
-      color: "blue",
+    dropdownIndicator: () => ({
+      display: "none",
+    }),
+    indicatorSeparator: () => ({
+      display: "none",
+    }),
+    placeholder: (baseStyles) => ({
+      ...baseStyles,
+      fontFamily: "Manrope, sans-serif",
+      fontWeight: "500",
+      fontSize: "14px",
+      lineHeight: "1.28571",
+      letterSpacing: "-0.03em",
+      color: "#262626",
       border: "none",
     }),
   };
 
   return (
     <div className={css.container}>
-      <SearchField />
+      <SearchField isNoticesActive={isNoticesActive} />
+
       <div className={css.categoryAndGender}>
         <select
           className={css.category}
@@ -126,42 +142,52 @@ export default function NoticesFilters() {
           styles={customStyles}
         />
       </div>
-      <div>
-        <label htmlFor="">
+      <div className={css.line}></div>
+      <div className={css.containerRadioBtn}>
+        <label className={css.radioBtn} htmlFor="">
           <input
+            className={css.radioInput}
+            placeholder="Popular"
             type="radio"
             name="Sorted"
             value="Popular"
             checked={sorted === "Popular"}
             onChange={handleSortChange}
           />
+          Popular
         </label>
-        <label htmlFor="">
+        <label className={css.radioBtn} htmlFor="">
           <input
+            className={css.radioInput}
             type="radio"
             name="Sorted"
             value="Unpopular"
             checked={sorted === "Unpopular"}
             onChange={handleSortChange}
           />
+          Unpopular
         </label>
-        <label htmlFor="">
+        <label className={css.radioBtn} htmlFor="">
           <input
+            className={css.radioInput}
             type="radio"
             name="Sorted"
             value="Cheap"
             checked={sorted === "Cheap"}
             onChange={handleSortChange}
           />
+          Cheap
         </label>
-        <label htmlFor="">
+        <label className={css.radioBtn} htmlFor="">
           <input
+            className={css.radioInput}
             type="radio"
             name="Sorted"
             value="Expensive"
             checked={sorted === "Expensive"}
             onChange={handleSortChange}
           />
+          Expensive
         </label>
       </div>
     </div>

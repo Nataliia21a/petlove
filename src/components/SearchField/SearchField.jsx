@@ -3,14 +3,22 @@ import css from "./SearchField.module.css";
 
 export default function SearchField({
   isNewsPageActive,
+  isNoticesActive,
   onChange,
   onSearch,
   handleClear,
   value,
 }) {
+  // const inputSearch = clsx(
+  //   isNewsPageActive ? css.inputSearchNews : css.searchInput
+  // );
+
   const inputSearch = clsx(
-    isNewsPageActive ? css.inputSearchNews : css.searchInput
+    isNewsPageActive && css.inputSearchNews,
+    isNoticesActive ? css.inputSearchNotices : css.searchInput
   );
+
+  const inputStyle = clsx(isNoticesActive ? css.inputNotices : css.input);
 
   return (
     <div className={inputSearch}>
@@ -20,7 +28,7 @@ export default function SearchField({
         </svg>
       </button>
       <input
-        className={css.input}
+        className={inputStyle}
         type="text"
         value={value}
         onChange={(evt) => onChange(evt.target.value)}
