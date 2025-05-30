@@ -15,13 +15,18 @@ const slice = createSlice({
     sex: [],
     species: [],
     locations: [],
+    searchQuery: "",
     page: 1,
     perPage: 6,
     totalPages: 1,
     loading: false,
     error: false,
   },
-  reducers: {},
+  reducers: {
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(getNotices.pending, (state) => {
@@ -83,4 +88,5 @@ const slice = createSlice({
       }),
 });
 
+export const { setSearchQuery } = slice.actions;
 export default slice.reducer;

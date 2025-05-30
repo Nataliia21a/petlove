@@ -9,6 +9,7 @@ import {
   getNoticesSex,
   getPetSpecies,
 } from "../../redux/notices/operations";
+import { setSearchQuery } from "../../redux/notices/slice";
 
 export default function NoticesFilters() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -79,9 +80,15 @@ export default function NoticesFilters() {
     }),
   };
 
+  const handleChange = (value) => {
+    console.log("value", value);
+
+    dispatch(setSearchQuery(value));
+  };
+
   return (
     <div className={css.container}>
-      <SearchField isNoticesActive={isNoticesActive} />
+      <SearchField isNoticesActive={isNoticesActive} onChange={handleChange} />
 
       <div className={css.categoryAndGender}>
         <select
