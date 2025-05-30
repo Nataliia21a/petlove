@@ -48,7 +48,7 @@ export default function NoticesFilters() {
     setSort(evt.target.value);
   };
 
-  console.log(selectedOption && selectedOption.value);
+  // console.log(selectedOption && selectedOption.value);
 
   const customStyles = {
     control: (baseStyles, state) => ({

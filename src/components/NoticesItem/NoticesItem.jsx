@@ -1,3 +1,7 @@
-export default function NoticesItem() {
-  return <p>NoticesItem</p>;
+export default function NoticesItem({ petItem }) {
+  return (
+    <div>
+      <img src={petItem.imgURL} alt={petItem.title} />
+    </div>
+  );
 }
