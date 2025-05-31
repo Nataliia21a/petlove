@@ -1,0 +1,113 @@
+.container {
+  border-radius: 16px;
+  padding: 24px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.img {
+  border-radius: 16px;
+  max-width: 287px;
+  margin-bottom: 24px;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2a;
+}
+
+.ratingBlock {
+  display: flex;
+  gap: 1px;
+}
+
+.rating {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  color: #2b2b2a;
+}
+
+.descriptionBlock {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 16px;
+  justify-content: space-between;
+}
+
+.categories {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: rgba(38, 38, 38, 0.5);
+}
+
+.categoriesText {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.02em;
+  color: #262626;
+}
+
+.commentText {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  color: #2b2b2a;
+  height: 36px;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2a;
+  margin-bottom: 12px;
+}
+
+.btnBlock {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.btn {
+  border-radius: 30px;
+  padding: 14px;
+  width: 231px;
+  height: 46px;
+  background: #f6b83d;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.favoriteBlock {
+  border-radius: 30px;
+  padding: 14px;
+  width: 46px;
+  height: 46px;
+  background: #fff4df;
+  box-sizing: border-box;
+}
