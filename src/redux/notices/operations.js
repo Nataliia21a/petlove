@@ -64,3 +64,17 @@ export const getLocations = createAsyncThunk(
     }
   }
 );
+
+export const getNoticeById = createAsyncThunk(
+  "notices/getNoticesById",
+  async (id, thunkAPI) => {
+    try {
+      const response = await axios.get(`/notices/${id}`);
+      console.log("noticeById", response.data);
+
+      return response.data;
+    } catch (error) {
+      thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

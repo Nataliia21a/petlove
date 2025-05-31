@@ -16,6 +16,7 @@ const slice = createSlice({
     species: [],
     locations: [],
     searchQuery: "",
+    selectNotice: "",
     page: 1,
     perPage: 6,
     totalPages: 1,
@@ -25,6 +26,9 @@ const slice = createSlice({
   reducers: {
     setSearchQuery: (state, action) => {
       state.searchQuery = action.payload;
+    },
+    setSelectNotice: (state, action) => {
+      state.selectNotice = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -88,5 +92,5 @@ const slice = createSlice({
       }),
 });
 
-export const { setSearchQuery } = slice.actions;
+export const { setSearchQuery, setSelectNotice } = slice.actions;
 export default slice.reducer;

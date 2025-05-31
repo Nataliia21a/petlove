@@ -1,6 +1,21 @@
+import { useDispatch } from "react-redux";
 import css from "./NoticesItem.module.css";
+import { setSelectNotice } from "../../redux/notices/slice";
 
 export default function NoticesItem({ petItem }) {
+  const date = new Date(petItem.birthday);
+  const dateDay = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+  const dateMonth =
+    date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
+  const dateYear = date.getFullYear();
+  const fullDate = `${dateDay}.${dateMonth}.${dateYear}`;
+
+  const dispatch = useDispatch();
+
+  const handleclick = () => {
+    dispatch(setSelectNotice(petItem._id));
+  };
+
   return (
     <div className={css.container}>
       <img className={css.img} src={petItem.imgURL} alt={petItem.title} />
@@ -16,28 +31,31 @@ export default function NoticesItem({ petItem }) {
       <ul className={css.descriptionBlock}>
         <li>
           <p className={css.categories}>Name</p>
-          <p>{petItem.name}</p>
+          <p className={css.categoriesText}>{petItem.name}</p>
         </li>
         <li>
-          <p className={css.categories}>Birthday</p> <p>{petItem.birthday}</p>
+          <p className={css.categories}>Birthday</p>
+          <p className={css.categoriesText}>{fullDate}</p>
         </li>
         <li>
           <p className={css.categories}>Sex</p>
-          <p>{petItem.sex}</p>
+          <p className={css.categoriesText}>{petItem.sex}</p>
         </li>
         <li>
           <p className={css.categories}>Species</p>
-          <p>{petItem.species}</p>
+          <p className={css.categoriesText}>{petItem.species}</p>
         </li>
         <li>
           <p className={css.categories}>Category</p>
-          <p>{petItem.category}</p>
+          <p className={css.categoriesText}>{petItem.category}</p>
         </li>
       </ul>
       <p className={css.commentText}>{petItem.comment}</p>
       {petItem.price && <p className={css.price}>${petItem.price}</p>}
       <div className={css.btnBlock}>
-        <button className={css.btn}>Learn more</button>
+        <button type="button" onClick={handleclick} className={css.btn}>
+          Learn more
+        </button>
         <div className={css.favoriteBlock}>
           <svg width="18" height="18">
             <use href="/svg/symbol-defs.svg#icon-heart-yellow-mob"></use>
