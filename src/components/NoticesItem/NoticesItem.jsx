@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import css from "./NoticesItem.module.css";
-import { setSelectNotice } from "../../redux/notices/slice";
+import { setModalOpen, setSelectNotice } from "../../redux/notices/slice";
 
 export default function NoticesItem({ petItem }) {
   const date = new Date(petItem.birthday);
@@ -14,6 +14,7 @@ export default function NoticesItem({ petItem }) {
 
   const handleclick = () => {
     dispatch(setSelectNotice(petItem._id));
+    dispatch(setModalOpen(true));
   };
 
   return (

@@ -1,0 +1,73 @@
+.modal {
+  border-radius: 30px;
+  width: 335px;
+  height: 394px;
+  background: #fff;
+  padding: 20px 20px 40px 20px;
+  box-sizing: border-box;
+}
+
+.svg {
+  stroke: black;
+}
+
+.noPetPhoto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #fff4df;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #f6b83d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #2b2b2a;
+  margin-bottom: 24px;
+}
+
+.btnBlock {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.btnRegister,
+.btnLogIn {
+  border-radius: 30px;
+  padding: 12px 12px;
+  height: 42px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+}
+
+.btnLogIn {
+  width: 135px;
+  color: #fff;
+  background: #f6b83d;
+}
+
+.btnRegister {
+  width: 129px;
+  color: #f6b83d;
+  background: #fff4df;
+}

@@ -17,6 +17,7 @@ const slice = createSlice({
     locations: [],
     searchQuery: "",
     selectNotice: "",
+    modalIsOpen: false,
     page: 1,
     perPage: 6,
     totalPages: 1,
@@ -29,6 +30,9 @@ const slice = createSlice({
     },
     setSelectNotice: (state, action) => {
       state.selectNotice = action.payload;
+    },
+    setModalOpen: (state, action) => {
+      state.modalIsOpen = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -92,5 +96,5 @@ const slice = createSlice({
       }),
 });
 
-export const { setSearchQuery, setSelectNotice } = slice.actions;
+export const { setSearchQuery, setSelectNotice, setModalOpen } = slice.actions;
 export default slice.reducer;
