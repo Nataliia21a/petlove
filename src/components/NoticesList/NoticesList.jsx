@@ -26,7 +26,7 @@ export default function NoticesList() {
   };
 
   return (
-    <div>
+    <div className={css.noticesListContainer}>
       <ul className={css.petListContainer}>
         {petList.map((petItem) => {
           return (
