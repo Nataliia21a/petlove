@@ -1,6 +1,7 @@
 .containerPagination {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
 .circleArrov,

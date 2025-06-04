@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import css from "../Header/Header.module.css";
 import clsx from "clsx";
+import { useState } from "react";
+import Nav from "../../components/Nav/Nav";
 
 export default function Header({ isActive }) {
   const clsxlogo = clsx(isActive ? css.logoWhite : css.logoBlack);
@@ -8,6 +10,10 @@ export default function Header({ isActive }) {
   const clsxUserIcon = clsx(
     isActive ? css.containerSvgWhite : css.containerSvg
   );
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpenMenu = () => {
+    setIsOpen(true);
+  };
   return (
     <header className={css.header}>
       <Link to="/home">
@@ -15,7 +21,7 @@ export default function Header({ isActive }) {
           <use href="/svg/symbol-defs.svg#icon-logo-mob-white-yellow"></use>
         </svg>
       </Link>
-      <div className={css.userMenu}>
+      <div className={css.userMenu} onClick={handleOpenMenu}>
         <div className={clsxUserIcon}>
           <svg className={css.userSvg} width="20" height="20">
             <use href="/svg/symbol-defs.svg#icon-user-yellow-mob"></use>
@@ -25,6 +31,7 @@ export default function Header({ isActive }) {
           <use href="/svg/symbol-defs.svg#icon-burger-menu-white-mob"></use>
         </svg>
       </div>
+      {isOpen && <Nav />}
     </header>
   );
 }
