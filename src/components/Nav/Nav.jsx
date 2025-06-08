@@ -19,6 +19,8 @@ export default function Nav() {
             Our friends
           </NavLink>
         </nav>
+        <button className={css.logInBtn}>LOG IN</button>
+        <button className={css.registrationBtn}>REGISTRATION</button>
       </div>
     </div>
   );

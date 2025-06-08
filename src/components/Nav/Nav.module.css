@@ -33,6 +33,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-bottom: 280px;
 }
 
 .navItem {
@@ -49,4 +50,29 @@
   color: #262626;
   box-sizing: border-box;
   text-align: center;
+}
+
+.logInBtn,
+.registrationBtn {
+  border-radius: 30px;
+  padding: 12px;
+  width: 178px;
+  height: 42px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.logInBtn {
+  background: #f6b83d;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.registrationBtn {
+  background: #fff4df;
+  color: #f6b83d;
 }
