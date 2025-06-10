@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
 import css from "./Nav.module.css";
 
-export default function Nav() {
+export default function Nav({ closeMenu }) {
   return (
     <div className={css.backdrop}>
       <div className={css.modal}>
-        <svg className={css.svgX} width="32" height="32">
+        <svg onClick={closeMenu} className={css.svgX} width="32" height="32">
           <use href="/svg/symbol-defs.svg#icon-x-black-mob"></use>
         </svg>
         <nav className={css.navContainer}>

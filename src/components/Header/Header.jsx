@@ -14,6 +14,10 @@ export default function Header({ isActive }) {
   const handleOpenMenu = () => {
     setIsOpen(true);
   };
+
+  const handleCloseMenu = () => {
+    setIsOpen(false);
+  };
   return (
     <header className={css.header}>
       <Link to="/home">
@@ -31,7 +35,7 @@ export default function Header({ isActive }) {
           <use href="/svg/symbol-defs.svg#icon-burger-menu-white-mob"></use>
         </svg>
       </div>
-      {isOpen && <Nav />}
+      {isOpen && <Nav closeMenu={handleCloseMenu} />}
     </header>
   );
 }
