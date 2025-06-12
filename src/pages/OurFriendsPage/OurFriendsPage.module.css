@@ -1,0 +1,8 @@
+.containerOurFriends {
+  display: flex;
+  flex-direction: column;
+  width: 335px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+}

@@ -5,6 +5,8 @@ import Header from "../../components/Header/Header";
 import Title from "../../components/Title/Title";
 import { useEffect } from "react";
 
+import css from "./OurFriendsPage.module.css";
+
 export default function OurFriendsPage() {
   const dispatch = useDispatch();
 
@@ -12,7 +14,7 @@ export default function OurFriendsPage() {
     dispatch(getFriends());
   }, []);
   return (
-    <div>
+    <div className={css.containerOurFriends}>
       <Header />
       <Title>Our friends</Title>
       <FriendList />

@@ -1,7 +1,26 @@
 import { NavLink } from "react-router-dom";
 import css from "./Nav.module.css";
+import { useEffect } from "react";
 
 export default function Nav({ closeMenu }) {
+  // const backdropClose = (evt) => {
+  //   if (evt.target === evt.currentTarget) {
+  //     closeMenu();
+  //   }
+  // };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.code === "Escape") {
+        closeMenu();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [closeMenu]);
+
   return (
     <div className={css.backdrop}>
       <div className={css.modal}>
