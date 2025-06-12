@@ -1,13 +1,9 @@
 import { NavLink } from "react-router-dom";
 import css from "./Nav.module.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Nav({ closeMenu }) {
-  // const backdropClose = (evt) => {
-  //   if (evt.target === evt.currentTarget) {
-  //     closeMenu();
-  //   }
-  // };
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -21,9 +17,21 @@ export default function Nav({ closeMenu }) {
     };
   }, [closeMenu]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeMenu();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [closeMenu]);
+
   return (
     <div className={css.backdrop}>
-      <div className={css.modal}>
+      <div className={css.modal} ref={menuRef}>
         <svg onClick={closeMenu} className={css.svgX} width="32" height="32">
           <use href="/svg/symbol-defs.svg#icon-x-black-mob"></use>
         </svg>
