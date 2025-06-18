@@ -3,14 +3,14 @@ import NoticesItem from "../NoticesItem/NoticesItem";
 import css from "./NoticesList.module.css";
 import ModalNotice from "../ModalNotice/ModalNotice";
 import { useEffect } from "react";
-import { getNoticeById } from "../../redux/notices/operations";
+import { getNoticeById, getNotices } from "../../redux/notices/operations";
 import ModalAttention from "../ModalAttention/ModalAttention";
 import { setModalOpen } from "../../redux/notices/slice";
 
 export default function NoticesList() {
   const petList = useSelector((state) => state.notices.items) || [];
 
-  console.log("petList", petList);
+  // console.log("petList", petList);
 
   const noticesId = useSelector((state) => state.notices.selectNotice);
   const modalIsOpen = useSelector((state) => state.notices.modalIsOpen);
@@ -18,8 +18,8 @@ export default function NoticesList() {
   const dispatch = useDispatch();
 
   // useEffect(() => {
-  //   dispatch(getNoticeById(noticesId));
-  // }, [noticesId]);
+  //   dispatch(getNotices(keyword));
+  // }, [keyword]);
 
   const handleClose = () => {
     dispatch(setModalOpen(false));

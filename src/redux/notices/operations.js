@@ -5,11 +5,36 @@ axios.defaults.baseURL = "https://petlove.b.goit.study/api";
 
 export const getNotices = createAsyncThunk(
   "notices/getNotices",
-  async (_, thunkAPI) => {
+  async (
+    {
+      keyword = "",
+      category = "",
+      species = "",
+      locationId = "",
+      sex = "",
+      byDate = true,
+      byPrice,
+      byPopularity,
+      page = 1,
+      limit = 6,
+    },
+    thunkAPI
+  ) => {
     try {
-      const response = await axios.get(`/notices`);
-      console.log(response.data);
+      const params = {
+        keyword,
+        category,
+        species,
+        locationId,
+        sex,
+        byDate,
+        byPrice,
+        byPopularity,
+        page,
+        limit,
+      };
 
+      const response = await axios.get(`/notices`, { params });
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
