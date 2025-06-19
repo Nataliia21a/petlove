@@ -38,14 +38,8 @@ export default function NoticesFilters() {
     setSort(evt.target.value);
   };
 
-  console.log("sorted", sorted);
-
   const sortByPrice = sorted === "Cheap" ? true : false;
-  console.log("sortByPrice", sortByPrice);
-
   const sortByPopularity = sorted === "Popular" ? false : true;
-
-  console.log("sortByPopularity", sortByPopularity);
 
   const customStyles = {
     control: (baseStyles, state) => ({
@@ -100,7 +94,7 @@ export default function NoticesFilters() {
     }
 
     dispatch(getNotices(params));
-  }, [keyword, sellCategory, type, sorted]);
+  }, [keyword, sellCategory, sex, type, sorted, selectedOption]);
 
   return (
     <div className={css.container}>
